@@ -1,5 +1,6 @@
+
 #
-# Install configure nginx
+# Install, configure nginx
 #
 
 require_recipe "ruby_enterprise"
@@ -11,6 +12,9 @@ end
 
 template "/opt/nginx/conf/nginx.conf" do
   source "nginx.conf.erb"
+  owner "root"
+  group "root"
+  mode "0644"
 end
 
 template "/etc/init/nginx.conf" do
@@ -24,4 +28,3 @@ service "nginx" do
   provider Chef::Provider::Service::Upstart
   action :enable
 end
-
