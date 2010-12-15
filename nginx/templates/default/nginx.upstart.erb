@@ -1,0 +1,10 @@
+description "nginx http daemon"
+ 
+start on runlevel [2]
+stop on runlevel [016]
+ 
+console owner
+ 
+exec /usr/local/sbin/nginx -c /path/to/nginx.conf -g "daemon off;"
+ 
+respawn

@@ -1,0 +1,50 @@
+
+user  www-data;
+worker_processes  3;
+
+events {
+    worker_connections  1024;
+}
+
+http {
+    passenger_root /opt/ruby-enterprise/lib/ruby/gems/1.8/gems/passenger-2.2.15;
+    passenger_ruby /opt/ruby-enterprise/bin/ruby;
+    #passenger_user_switching off;
+    passenger_default_user www-data;
+
+    include       mime.types;
+    default_type  application/octet-stream;
+    sendfile        on;
+    keepalive_timeout  65;
+
+    server {
+        listen       80;
+        #server_name  ec2-184-73-98-120.compute-1.amazonaws.com;
+        root /opt/rpx/app/current/public;
+        passenger_enabled on;
+        rails_env production;
+        # Serve static files right away
+        if (-f $request_filename) {
+                break;
+        }
+
+        # Disable site via capistrano (cap deploy:web:disable)
+        if (-f $document_root/system/maintenance.html) {
+                rewrite ^(.*)$ /system/maintenance.html break;
+        }
+
+        #location / {
+        #    root   html;
+        #    index  index.html index.htm;
+        #}
+
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+}
