@@ -26,5 +26,5 @@ end
 
 service "nginx" do
   provider Chef::Provider::Service::Upstart
-  action :enable
+  action [ :enable, :start ]
 end
