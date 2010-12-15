@@ -1,12 +1,16 @@
-= COPYRIGHT
+= TITLE:
 
-Copyright (C) 2010 RPX Corporation.  All Rights Reserved.
+RPX Cookbook repo
 
 = DESCRIPTION:
 
-chef recipes for RPX
+Chef recipes for server config management.
 
 = SEE ALSO:
 
 http://www.opscode.com
+
+= COPYRIGHT:
+
+Copyright (C) 2010 RPX Corporation.  All Rights Reserved.
 
