@@ -1,0 +1,35 @@
+{
+    "recipes": {
+      "resque::default": "Installs resque package.",
+      "resque::server": "Configures resque server.",
+      "resque::workers": "Configures resque workers."
+    },
+    "attributes": {
+    },
+    "conflicting": {
+    },
+    "dependencies": {
+      "bluepill": [
+
+      ]
+    },
+    "providing": {
+    },
+    "maintainer": "resque",
+    "replacing": {
+    },
+    "platforms": {
+    },
+    "license": "Apache v2.0",
+    "version": "0.1.0",
+    "maintainer_email": "sysadmins@37signals.com",
+    "groupings": {
+    },
+    "long_description": "",
+    "recommendations": {
+    },
+    "name": "resque",
+    "description": "Configures Resque",
+    "suggestions": {
+    }
+  }

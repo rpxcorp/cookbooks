@@ -1,0 +1,13 @@
+description "resque patent fetch worker"
+ 
+start on runlevel [2]
+stop on runlevel [016]
+ 
+console owner
+ 
+script
+  cd /opt/rpx/app/current
+  exec /opt/ruby-enterprise/bin/rake environment resque:work QUEUE=<%= @queues.to_a.join(",") %> INTERVAL=<%= @interval %> <%= @env_vars %>
+end script
+ 
+respawn

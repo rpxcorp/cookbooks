@@ -1,0 +1,13 @@
+description "resque web server"
+
+start on runlevel [2]
+stop on runlevel [016]
+ 
+console owner
+ 
+script
+  cd /opt/rpx/app/current
+  exec /usr/bin/env HOME=/opt/rpx/app/current /opt/ruby-enterprise/bin/resque-web -F -p 8201
+end script
+ 
+respawn
