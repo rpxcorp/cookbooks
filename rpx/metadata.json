@@ -1,0 +1,110 @@
+{
+  "recipes": {
+    "xprdev::install_resque": "Install and configure resque",
+    "xprdev::cleanup": "Cleanup any final things.",
+    "xprdev::ebs2": "Mount a bunch of EBS vols",
+    "xprdev::install_gems": "Install XPRDEV gems",
+    "xprdev::create_dirs": "Create XPRDEV dirs",
+    "xprdev::start_solr": "Start solr.",
+    "xprdev::add_users": "Add XPRDEV users",
+    "xprdev::default": "Perform all XPRDEV recipes",
+    "xprdev::install_nginx": "Light weight recipe to install nginx under passenger.",
+    "xprdev::docket_puller": "Setup for special app.",
+    "xprdev::add_cron": "Add XPRDEV crons",
+    "xprdev::mount_ebs": "Mount XPRDEV EBS Volumes"
+  },
+  "attributes": {
+    "xprdev/ebs_volume_postgres": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "xprdev::mount_ebs",
+        "xprdev::default"
+      ],
+      "description": "EBS volume for postgres.",
+      "display_name": "EBS_VOLUME_POSTGRES"
+    },
+    "xprdev/ebs_volume_app": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "xprdev::mount_ebs",
+        "xprdev::default"
+      ],
+      "description": "EBS volume for the app.",
+      "display_name": "EBS_VOLUME_APP"
+    },
+    "xprdev/aws_secret_access_key": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "xprdev::mount_ebs",
+        "xprdev::default"
+      ],
+      "description": "Pulldown cred then select AWS_SECRET_ACCESS_KEY.",
+      "display_name": "AWS_SECRET_ACCESS_KEY"
+    },
+    "xprdev/aws_access_key": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "xprdev::mount_ebs",
+        "xprdev::default"
+      ],
+      "description": "Pulldown cred then select AWS_ACCESS_KEY_ID.",
+      "display_name": "AWS_ACCESS_KEY"
+    },
+    "xprdev/ebs_volumes": {
+      "required": "required",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "type": "string",
+      "recipes": [
+        "xprdev::ebs2"
+      ],
+      "description": "Space delimited string of EBS volume.",
+      "display_name": "EBS_VOLUMES"
+    }
+  },
+  "providing": {
+  },
+  "dependencies": {
+  },
+  "maintainer": "YOUR_COMPANY_NAME",
+  "replacing": {
+  },
+  "maintainer_email": "YOUR_EMAIL",
+  "groupings": {
+  },
+  "platforms": {
+  },
+  "license": "All rights reserved",
+  "version": "0.0.1",
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "name": "xprdev",
+  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "description": "Installs/Configures xprdev",
+  "conflicting": {
+  }
+}
