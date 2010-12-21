@@ -1,0 +1,31 @@
+{
+  "recipes": {
+    "nginx::restart": "Restart nginx daemon.",
+    "nginx": "Installs nginx from source with passenger."
+  },
+  "attributes": {
+  },
+  "providing": {
+  },
+  "dependencies": {
+  },
+  "maintainer": "RPX Inc.",
+  "replacing": {
+  },
+  "maintainer_email": "cookbooks@rpxcorp.com",
+  "groupings": {
+  },
+  "platforms": {
+  },
+  "license": "Apache 2.0",
+  "version": "0.0.1",
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "name": "nginx",
+  "long_description": "",
+  "description": "Installs and configures nginx",
+  "conflicting": {
+  }
+}
