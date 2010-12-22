@@ -10,16 +10,16 @@
   },
   "dependencies": {
   },
-  "maintainer": "Opscode, Inc.",
+  "maintainer": "Your Name",
   "replacing": {
   },
-  "maintainer_email": "cookbooks@opscode.com",
+  "maintainer_email": "youremail@example.com",
   "groupings": {
   },
   "platforms": {
   },
-  "license": "Apache 2.0",
-  "version": "0.11.0",
+  "license": "Apache v2.0",
+  "version": "0.0.0",
   "recommendations": {
   },
   "suggestions": {
