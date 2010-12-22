@@ -1,9 +1,8 @@
 {
   "recipes": {
-    "postgresql::server": "Installs postgresql server packages, debian family style",
+    "postgresql::server": "Installs postgresql server packages, templates",
     "postgresql::client": "Installs postgresql client package(s)",
-    "postgresql::redhat": "Installs postgresql server packages, redhat family style",
-    "postgresql": "Empty, use one of the other recipes"
+    "postgresql": "Installs postgresql client package"
   },
   "attributes": {
   },
@@ -18,24 +17,6 @@
   "groupings": {
   },
   "platforms": {
-    "rhel": [
-
-    ],
-    "debian": [
-
-    ],
-    "fedora": [
-
-    ],
-    "centos": [
-
-    ],
-    "suse": [
-
-    ],
-    "ubuntu": [
-
-    ]
   },
   "license": "Apache 2.0",
   "version": "0.11.0",
