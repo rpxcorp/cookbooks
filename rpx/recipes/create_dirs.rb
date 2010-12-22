@@ -1,6 +1,6 @@
 
 #
-# Copyright 2010, XPRDEV
+# Copyright 2010, RPX
 #
 # All rights reserved - Do Not Redistribute
 #
@@ -15,5 +15,6 @@ dirs.each do |d|
   next if File.directory?(d)
   directory d do
     action :create
+    recursive true
   end
 end

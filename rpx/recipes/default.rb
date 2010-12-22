@@ -1,6 +1,6 @@
 
 #
-# Copyright 2010, YOUR_COMPANY_NAME
+# Copyright 2010, RPX
 #
 # All rights reserved - Do Not Redistribute
 #

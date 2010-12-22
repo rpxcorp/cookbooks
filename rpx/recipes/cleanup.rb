@@ -1,4 +1,10 @@
 
+#
+# Copyright 2010, RPX
+#
+# All rights reserved - Do Not Redistribute
+#
+
 ree_gem "warden" do
   version "> 0.10.3"
   action :remove
