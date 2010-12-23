@@ -1,0 +1,48 @@
+{
+    "recipes": {
+      "redis::default": "Configure redis server"
+    },
+    "attributes": {
+    },
+    "conflicting": {
+    },
+    "dependencies": {
+    },
+    "providing": {
+    },
+    "maintainer": "37signals",
+    "replacing": {
+    },
+    "platforms": {
+      "rhel": [
+
+      ],
+      "debian": [
+
+      ],
+      "fedora": [
+
+      ],
+      "centos": [
+
+      ],
+      "suse": [
+
+      ],
+      "ubuntu": [
+
+      ]
+    },
+    "license": "Apache v2.0",
+    "version": "0.1.0",
+    "maintainer_email": "sysadmins@37signals.com",
+    "groupings": {
+    },
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+    "recommendations": {
+    },
+    "name": "redis",
+    "description": "Configures redis",
+    "suggestions": {
+    }
+  }
