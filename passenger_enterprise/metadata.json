@@ -1,36 +1,44 @@
 {
-  "recipes": {
-    "passenger::default": "Installs Passenger gem with Ruby Enterprise Edition"
-  },
-  "attributes": {
-  },
-  "providing": {
-  },
-  "dependencies": {
-    "ruby_enterprise": [
+    "providing": {
+    },
+    "attributes": {
+    },
+    "replacing": {
+    },
+    "dependencies": {
+      "nginx": [
 
-    ]
-  },
-  "maintainer": "Opscode, Inc.",
-  "replacing": {
-  },
-  "maintainer_email": "ops@opscode.com",
-  "groupings": {
-  },
-  "platforms": {
-    "ubuntu": [
+      ],
+      "apache2": [
 
-    ]
-  },
-  "license": "Apache 2.0",
-  "version": "0.4.2",
-  "recommendations": {
-  },
-  "suggestions": {
-  },
-  "name": "passenger_enterprise",
-  "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
-  "description": "Installs and configures Passenger under Ruby Enterprise Edition",
-  "conflicting": {
+      ],
+      "ruby_enterprise": [
+
+      ]
+    },
+    "groupings": {
+    },
+    "recommendations": {
+    },
+    "platforms": {
+      "ubuntu": [
+
+      ]
+    },
+    "license": "Apache 2.0",
+    "version": "0.4.2",
+    "maintainer": "Opscode, Inc.",
+    "suggestions": {
+    },
+    "recipes": {
+      "passenger_enterprise": "Installs Passenger gem with Ruby Enterprise Edition",
+      "passenger_enterprise::nginx": "Installs Passenger gem w/ REE, and recompiles support into Nginx",
+      "passenger_enterprise::apache2": "Enables Apache module configuration for passenger under Ruby Enterprise Edition"
+    },
+    "maintainer_email": "ops@opscode.com",
+    "name": "passenger_enterprise",
+    "conflicting": {
+    },
+    "description": "Installs and configures Passenger under Ruby Enterprise Edition with Apache",
+    "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n"
   }
-}
