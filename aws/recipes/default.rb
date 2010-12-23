@@ -17,7 +17,10 @@
 # limitations under the License.
 #
 
+SANDBOX_BIN_DIR = "/opt/rightscale/sandbox/bin"
+
 r = gem_package "right_aws" do
+  gem_binary "#{SANDBOX_BIN_DIR}/gem"
   action :nothing
 end
 
