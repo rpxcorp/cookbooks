@@ -1,6 +1,8 @@
 {
   "recipes": {
-    "hudson": "Installs Hudon CI server"
+    "hudson::source": "Installs Hudon CI server from source",
+    "hudson::plugins": "Installs Hudon CI plugins",
+    "hudson::default": "Installs Hudon CI server"
   },
   "attributes": {
   },
