@@ -24,3 +24,9 @@ service "hudson" do
   supports :status => true, :restart => true
   action [ :enable, :start ]
 end
+
+plugins = [
+  "chucknorris.hpi", "git.hpi", "rake.hpi", "rubymetricfu.hpi", "sounds.hpi", "xunit.hpi",
+  "cvs.hpi", "jsunit.hpi", "ruby.hpi", "selenium-aes.hpi", "ssh-slaves.hpi",
+  "ec2.hpi", "maven-plugin.hpi", "rubyMetrics.hpi", "sloccount.hpi", "subversion.hpi",
+]
