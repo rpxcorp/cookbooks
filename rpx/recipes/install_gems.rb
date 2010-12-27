@@ -6,7 +6,7 @@
 #
 
 # for ree_gem
-include_recipe "ruby_enterprise::default"
+require_recipe "ruby_enterprise::default"
 
 # Installing debian packages necassary for gems...")
 pkg = [
