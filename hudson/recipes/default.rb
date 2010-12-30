@@ -5,6 +5,8 @@
 
 require_recipe "java"
 
+package "daemon"
+
 script "install_hudson" do
   interpreter "bash"
   user "root"
@@ -17,7 +19,6 @@ script "install_hudson" do
   EOH
 end
 
-package "daemon"
 package "hudson"
 
 service "hudson" do
