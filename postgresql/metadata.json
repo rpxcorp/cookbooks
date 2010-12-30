@@ -2,7 +2,8 @@
   "recipes": {
     "postgresql::server": "Installs postgresql server packages, templates",
     "postgresql::client": "Installs postgresql client package(s)",
-    "postgresql": "Installs postgresql client package"
+    "postgresql::default": "Installs postgresql client package",
+    "postgresql::restart": "Runtime script restarts postgresql daemon(s)."
   },
   "attributes": {
   },
