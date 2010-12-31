@@ -21,7 +21,8 @@ end
 
 package "hudson"
 
-service "hudson" do
-  supports :status => true, :restart => true
-  action [ :enable, :start ]
-end
+# hangs chef
+#service "hudson" do
+#  supports :status => true, :restart => true
+#  action [ :enable, :start ]
+#end
