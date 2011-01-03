@@ -1,8 +1,12 @@
 {
   "recipes": {
+    "postgresql::adminpack": "Installs server side adminpack for pgadmin tool.",
     "postgresql::server": "Installs postgresql server packages, templates",
+    "postgresql::ripi-config": "Configure PG server for RIPI",
     "postgresql::client": "Installs postgresql client package(s)",
     "postgresql::default": "Installs postgresql client package",
+    "postgresql::pgagent": "Install pgagent job control system for postgres.",
+    "postgresql::pgpool": "Install pgpool connection pooler.",
     "postgresql::restart": "Runtime script restarts postgresql daemon(s)."
   },
   "attributes": {
