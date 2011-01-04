@@ -3,6 +3,8 @@
 # Puts config files in place for RIPI after server install
 #
 
+require_recipe "postgresql::server"
+
 service "postgresql" do
   service_name "postgresql-#{node.postgresql.version}"
   action :stop

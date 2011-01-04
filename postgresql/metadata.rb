@@ -10,3 +10,4 @@ recipe            "postgresql::adminpack", "Installs server side adminpack for p
 recipe            "postgresql::pgagent", "Install pgagent job control system for postgres."
 recipe            "postgresql::pgpool", "Install pgpool connection pooler."
 recipe            "postgresql::ripi-config", "Configure PG server for RIPI"
+recipe            "postgresql::slony", "Install Slony replication."

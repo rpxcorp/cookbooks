@@ -3,6 +3,8 @@
 # Install Slony replication
 #
 
+require_recipe "postgresql::server"
+
 pkg = [
   "postgresql-#{node.postgresql.version}-slony1",
   "slony1-bin",
