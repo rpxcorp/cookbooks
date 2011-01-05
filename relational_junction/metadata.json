@@ -1,0 +1,31 @@
+{
+  "recipes": {
+    "nginx::restart": "Restart nginx daemon.",
+    "nginx::default": "Installs nginx from source with passenger and ruby enterprise."
+  },
+  "attributes": {
+  },
+  "providing": {
+  },
+  "dependencies": {
+  },
+  "maintainer": "RPX Inc.",
+  "replacing": {
+  },
+  "maintainer_email": "cookbooks@rpxcorp.com",
+  "groupings": {
+  },
+  "platforms": {
+  },
+  "license": "Apache 2.0",
+  "version": "0.0.1",
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "name": "relational_junction",
+  "long_description": "",
+  "description": "Installs and configures nginx",
+  "conflicting": {
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "recipes": {
+    "dev::default": "Install redmine."
+  },
+  "attributes": {
+  },
+  "providing": {
+  },
+  "dependencies": {
+  },
+  "maintainer": "Your Name",
+  "replacing": {
+  },
+  "maintainer_email": "youremail@example.com",
+  "groupings": {
+  },
+  "platforms": {
+  },
+  "license": "Apache v2.0",
+  "version": "0.0.0",
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "name": "dev",
+  "long_description": "",
+  "description": "A fabulous new cookbook",
+  "conflicting": {
+  }
+}
