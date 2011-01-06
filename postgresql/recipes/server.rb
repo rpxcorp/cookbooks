@@ -44,3 +44,23 @@ pkg.each do |i|
     action :install
   end
 end
+
+
+template "/etc/postgresql/#{node.postgresql.version}/main/pg_hba.conf" do
+  source "pg_hba.default.conf"
+  owner "postgres"
+  group "postgres"
+  mode "0644"
+end
+
+template "/etc/postgresql/#{node.postgresql.version}/main/postgresql.conf" do
+  source "postgresql.default.conf"
+  owner "postgres"
+  group "postgres"
+  mode "0644"
+end
+
+service "postgresql" do
+  service_name "postgresql-#{node.postgresql.version}"
+  action :restart
+end
