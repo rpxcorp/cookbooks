@@ -47,14 +47,14 @@ end
 
 
 template "/etc/postgresql/#{node.postgresql.version}/main/pg_hba.conf" do
-  source "pg_hba.default.conf"
+  source "pg_hba.default.conf.erb"
   owner "postgres"
   group "postgres"
   mode "0644"
 end
 
 template "/etc/postgresql/#{node.postgresql.version}/main/postgresql.conf" do
-  source "postgresql.default.conf"
+  source "postgresql.default.conf.erb"
   owner "postgres"
   group "postgres"
   mode "0644"
