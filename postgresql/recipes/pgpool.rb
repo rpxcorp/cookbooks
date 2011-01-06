@@ -5,7 +5,11 @@
 
 package "pgpool"
 
-service "postgresql-#{node.postgresql.version}" do
+template "/etc/pgpool.conf" do
+  source "pgpool.conf.erb"
+end
+
+service "pgpool" do
   provider Chef::Provider::Service::Init::Debian
   action :restart
 end
