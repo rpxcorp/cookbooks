@@ -64,3 +64,9 @@ service "postgresql" do
   service_name "postgresql-#{node.postgresql.version}"
   action :restart
 end
+
+execute "createlang" do
+  user "postgres"
+  command "createlang plpgsql template1"
+end
+
