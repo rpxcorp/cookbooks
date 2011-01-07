@@ -67,6 +67,6 @@ end
 
 execute "createlang" do
   user "postgres"
-  command "createlang plpgsql template1"
+  command 'su - postgres -c "createlang plpgsql template1"'
 end
 
