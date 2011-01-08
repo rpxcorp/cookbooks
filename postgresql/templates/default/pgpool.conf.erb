@@ -15,7 +15,7 @@ socket_dir = '/var/run/postgresql'
 
 # Host name where PostgreSQL server is running on.  '' means localhost
 # using Unix domain socket.
-backend_host_name = '10.210.41.242'
+backend_host_name = 'db01'
 
 # port number PostgreSQL server is running on
 backend_port = 5432
@@ -26,11 +26,11 @@ backend_socket_dir = '/var/run/postgresql'
 
 # Host name where secondary PostgreSQL server is running on.  '' means
 # localhost using Unix domain socket.
-secondary_backend_host_name = ''
+secondary_backend_host_name = 'db02'
 
 # Port number secondary PostgreSQL server is running on.  0 means no
 # secondary PostgreSQL.
-secondary_backend_port = 0
+secondary_backend_port = 5432
 
 # Number of pre-forked child processes
 num_init_children = 8
@@ -68,7 +68,7 @@ replication_timeout = 5000
 
 # Load balancing mode, i.e., all SELECTs except in a transaction block
 # are load balanced.  This is ignored if replication_mode is false.
-load_balance_mode = false
+load_balance_mode = true
 
 # Load balance weight for master and secondary.  The actual weight is
 # calculated by weight_master divided by weight_secondary.  For
@@ -79,8 +79,8 @@ load_balance_mode = false
 #
 # are regarded as the master having double the weight compared to the
 # secondary.  Master and secondary have the same weight in the default.
-weight_master = 0.5
-weight_secondary = 0.5
+weight_master = 1
+weight_secondary = 1
 
 # If there is a data mismatch between master and secondary, start
 # degeneration to stop replication mode.
@@ -97,7 +97,7 @@ reset_query_list = 'ABORT; RESET ALL; SET SESSION AUTHORIZATION DEFAULT'
 print_timestamp = true
 
 # If true, operate in master/slave mode.
-master_slave_mode = false
+master_slave_mode = true
 
 # If true, cache connection pool.
 connection_cache = true
