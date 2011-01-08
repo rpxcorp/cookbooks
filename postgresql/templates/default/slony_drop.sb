@@ -1,0 +1,26 @@
+#!/bin/sh
+
+
+CLUSTERNAME=demo
+MASTERDBNAME=rpx
+SLAVEDBNAME=rpx
+MASTERHOST=db01
+SLAVEHOST=db02
+REPLICATIONUSER=slony
+REPLICATIONPASS=PG3l3f@nt
+
+slonik <<_EOF_
+    #--
+    # define the namespace the replication system uses in our example it is
+    # slony_example
+    #--
+    cluster name = $CLUSTERNAME;
+
+    node 1 admin conninfo = 'dbname=$MASTERDBNAME host=$MASTERHOST user=$REPLICATIONUSER password=$REPLICATIONPASS';
+    node 2 admin conninfo = 'dbname=$SLAVEDBNAME host=$SLAVEHOST user=$REPLICATIONUSER password=$REPLICATIONPASS';
+
+    uninstall node ( id = 1 );
+    uninstall node ( id = 2 );
+
+_EOF_
+
