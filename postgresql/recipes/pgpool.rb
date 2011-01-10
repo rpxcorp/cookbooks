@@ -3,6 +3,8 @@
 # Add pgpool to client
 #
 
+require_recipe "postgresql::client"
+
 package "pgpool"
 
 template "/etc/pgpool.conf" do
