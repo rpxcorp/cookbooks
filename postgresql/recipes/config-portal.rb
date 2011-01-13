@@ -37,6 +37,6 @@ end
 
 execute "createdb" do
   user "postgres"
-  command 'su - postgres -c "createdb --encoding=UTF8 --owner=portal_prod portal_prod"'
+  command 'su - postgres -c "createdb --owner=portal_prod portal_prod"'
   ignore_failure true
 end
