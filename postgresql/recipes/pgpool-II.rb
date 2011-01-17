@@ -25,7 +25,7 @@ bash "install_pgpool-II" do
 end
 
 template "/etc/pgpool.conf" do
-  source "pgpool.conf.erb"
+  source "pgpool2.conf.erb"
   owner "root"
   group "root"
   mode "644"
