@@ -1,0 +1,10 @@
+description "pgpool daemon"
+
+start on runlevel [2]
+stop on runlevel [016]
+
+console owner
+
+exec /usr/bin/pgpool -n -d -f /etc/pgpool.conf > /var/log/postgresql/pgpool.log 2>&1
+
+respawn
