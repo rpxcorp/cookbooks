@@ -2,12 +2,6 @@
   "suggestions": {
   },
   "platforms": {
-    "debian": [
-
-    ],
-    "ubuntu": [
-
-    ]
   },
   "long_description": "",
   "conflicting": {
@@ -24,17 +18,17 @@
   },
   "dependencies": {
   },
-  "maintainer": "Opscode, Inc.",
-  "version": "0.9.1",
+  "maintainer": "Your Name",
+  "version": "0.0.0",
   "attributes": {
   },
   "replacing": {
   },
-  "maintainer_email": "cookbooks@opscode.com",
+  "maintainer_email": "youremail@example.com",
   "groupings": {
   },
   "name": "apt",
   "recommendations": {
   },
-  "license": "Apache 2.0"
+  "license": "Apache v2.0"
 }
