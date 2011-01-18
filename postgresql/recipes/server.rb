@@ -15,6 +15,7 @@ end
 pkg = [
   "postgresql-#{node.postgresql.version}",
   "postgresql-contrib-#{node.postgresql.version}",
+  "postgresql-server-dev-#{node.postgresql.version}",
 ]
 opt = [
   "ptop",

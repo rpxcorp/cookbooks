@@ -4,7 +4,7 @@
 #
 
 pkg = [
-  "postgresql-client-8.4",
+  "postgresql-client-#{node.postgresql.version}",
   "libpq-dev",
 ]
 
