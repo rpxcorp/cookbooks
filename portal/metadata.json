@@ -1,0 +1,30 @@
+{
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "long_description": "",
+  "conflicting": {
+  },
+  "description": "A fabulous new cookbook",
+  "recipes": {
+    "portal::default": "Setup the portal server."
+  },
+  "providing": {
+  },
+  "dependencies": {
+  },
+  "maintainer": "Your Name",
+  "version": "0.0.0",
+  "attributes": {
+  },
+  "replacing": {
+  },
+  "maintainer_email": "youremail@example.com",
+  "groupings": {
+  },
+  "name": "portal",
+  "recommendations": {
+  },
+  "license": "Apache v2.0"
+}
