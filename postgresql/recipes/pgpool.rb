@@ -5,7 +5,7 @@
 
 require_recipe "postgresql::client"
 
-package "pgpool"
+package "pgpool2"
 
 template "/etc/pgpool.conf" do
   source "pgpool.conf.erb"

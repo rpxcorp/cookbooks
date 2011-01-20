@@ -6,12 +6,15 @@
 # configure frontend
 listen_addresses = 'localhost'
 port = 5432
+pcp_port = 9898
 
 # configure the backends
-backend_host_name = 'db01'
-backend_port = 5432
-secondary_backend_host_name = 'db02'
-secondary_backend_port = 5432
+backend_hostname0 = 'db01'
+backend_port0 = 5432
+backend_weight0 = 1
+backend_hostname1 = 'db02'
+backend_port1 = 5432
+backend_weight1 = 1
 
 # connection pooling does not seem to work
 num_init_children = 4
