@@ -1,5 +1,5 @@
 
-user  www-data;
+user  rpx;
 worker_processes  3;
 
 events {
@@ -10,7 +10,7 @@ http {
     passenger_root /opt/ruby-enterprise/lib/ruby/gems/1.8/gems/passenger-2.2.15;
     passenger_ruby /opt/ruby-enterprise/bin/ruby;
     #passenger_user_switching off;
-    passenger_default_user www-data;
+    passenger_default_user rpx;
 
     include       mime.types;
     default_type  application/octet-stream;
