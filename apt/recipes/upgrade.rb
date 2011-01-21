@@ -1,6 +1,6 @@
 
 #
-# Update all out of date apt packages
+# Refresh all out of date apt packages
 #
 
 execute "apt-get upgrade" do
