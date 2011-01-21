@@ -5,6 +5,8 @@ stop on runlevel [016]
 
 console owner
 
-exec /usr/bin/pgpool -n -d -f /etc/pgpool.conf > /var/log/postgresql/pgpool.log 2>&1
+exec /usr/sbin/pgpool -n -d -f /etc/pgpool.conf > /var/log/postgresql/pgpool.log 2>&1
+
+post-stop exec /usr/sbin/pgpool -m immediate stop
 
 respawn
