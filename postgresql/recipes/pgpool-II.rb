@@ -5,7 +5,7 @@
 
 require_recipe "postgresql::client"
 
-package openssl
+package "openssl"
 
 remote_file "/root/pgpool-II.tar.gz" do
   source "http://pgfoundry.org/frs/download.php/2841/pgpool-II-3.0.1.tar.gz"
