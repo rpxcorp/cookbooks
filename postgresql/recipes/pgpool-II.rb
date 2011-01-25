@@ -3,6 +3,8 @@
 # pgpool-II
 #
 
+VERSION='3.0.1'
+
 require_recipe "postgresql::client"
 
 package "openssl"
@@ -17,7 +19,7 @@ bash "install_pgpool-II" do
   cwd "/root"
   code <<-EOH
   tar xzf pgpool-II.tar.gz
-  cd pgpool-II
+  cd pgpool-II-3.0.1
   ./configure --with-openssl --prefix=/usr
   make
   make install
