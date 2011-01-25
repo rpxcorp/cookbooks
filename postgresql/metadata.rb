@@ -9,6 +9,7 @@ recipe            "postgresql::restart", "Runtime script restarts postgresql dae
 recipe            "postgresql::adminpack", "Installs server side adminpack for pgadmin tool."
 recipe            "postgresql::pgagent", "Install pgagent job control system for postgres."
 recipe            "postgresql::pgpool", "Install pgpool connection pooler."
+recipe            "postgresql::pgpool-II", "Install pgpool-II connection pooler."
 recipe            "postgresql::ripi-config", "Configure PG server for RIPI"
 recipe            "postgresql::slony", "Install Slony replication."
 recipe            "postgresql::orafce", "Install Orafce Oracle compat utils."
