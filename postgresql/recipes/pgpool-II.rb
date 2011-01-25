@@ -38,7 +38,7 @@ template "/etc/init/pgpool.conf" do
   mode "755"
 end
 
-service "pgpool" do
-  provider Chef::Provider::Service::Upstart
-  action [ :enable :start ]
-end
+#service "pgpool" do
+#  provider Chef::Provider::Service::Upstart
+#  action [ :enable :start ]
+#end
