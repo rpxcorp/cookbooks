@@ -40,7 +40,21 @@ template "/etc/init/pgpool.conf" do
   mode "755"
 end
 
-#service "pgpool" do
-#  provider Chef::Provider::Service::Upstart
-#  action [ :enable :start ]
-#end
+directory "/var/run/pgpool" do
+  owner "root"
+  group "root"
+  mode "0755"
+  action :create
+end
+
+directory "/var/log/postgresql" do
+  owner "root"
+  group "root"
+  mode "0755"
+  action :create
+end
+
+service "pgpool" do
+  provider Chef::Provider::Service::Upstart
+  action :start
+end

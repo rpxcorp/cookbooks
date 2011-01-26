@@ -20,23 +20,6 @@ pkg = [
 opt = [
   "ptop",
   "pgtune",
-  #"pgagent",
-  #"postgresql-#{node.postgresql.version}-slony1",
-  #"slony1-bin",
-  #"pgpool2",
-  #"postgresql-#{node.postgresql.version}-plproxy",
-  #"postgresql-#{node.postgresql.version}-postgis",
-  #"pgloader",
-  ## Oracle compat
-  #"ora2pg",
-  #"postgresql-8.3-orafce",
-  ## Procedural Languages
-  #"postgresql-8.3-plruby",
-  #"postgresql-plperl-8.4",
-  #"postgresql-plpython-8.4",
-  ## Just stuff
-  #"postgresql-autodoc",
-  #"postgresql-filedump-#{node.postgresql.version}",
 ]
 
 pkg = pkg + opt
@@ -66,9 +49,18 @@ service "postgresql" do
   action :restart
 end
 
-execute "createlang" do
-  user "postgres"
-  command 'su - postgres -c "createlang plpgsql template1"'
-  ignore_failure true
+execute "dropcuster" do
+ user "postgres"
+ command "su - postgres -c 'pg_dropcluster --stop 9.0 main'"
 end
 
+execute "dropcuster" do
+ user "postgres"
+ command "su - postgres -c 'pg_createcluster --start -e UTF-8 9.0 main'"
+end
+
+execute "createlang" do
+  user "postgres"
+  command "su - postgres -c 'createlang plpgsql template1'"
+  ignore_failure true
+end
