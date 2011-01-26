@@ -69,7 +69,7 @@ end
 
 
 # Override
-default[:postgresql][:version] = "9.0"
+set[:postgresql][:version] = "9.0"
 set[:postgresql][:dir]         = "/etc/postgresql/#{node[:postgresql][:version]}/main"
 
 
