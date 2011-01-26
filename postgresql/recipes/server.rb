@@ -49,7 +49,7 @@ template "/etc/postgresql/#{VERSION}/main/postgresql.conf" do
 end
 
 service "postgresql" do
-  service_name "postgresql-#{VERSION}"
+  service_name VERSION == '9.0 ? 'postgresql' : "postgresql-#{VERSION}"
   action :restart
 end
 
