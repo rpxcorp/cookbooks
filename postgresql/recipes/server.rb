@@ -5,10 +5,14 @@
 
 include_recipe "postgresql::client"
 
+VERSION = node[:postgresql][:version]
+
 case node[:postgresql][:version]
 when "8.3"
   node.default[:postgresql][:ssl] = "off"
 when "8.4"
+  node.default[:postgresql][:ssl] = "true"
+else
   node.default[:postgresql][:ssl] = "true"
 end
 
@@ -51,12 +55,12 @@ end
 
 execute "dropcuster" do
  user "postgres"
- command "su - postgres -c 'pg_dropcluster --stop 9.0 main'"
+ command "su - postgres -c 'pg_dropcluster --stop #{node.postgresql.version} main'"
 end
 
 execute "dropcuster" do
  user "postgres"
- command "su - postgres -c 'pg_createcluster --start -e UTF-8 9.0 main'"
+ command "su - postgres -c 'pg_createcluster --start -e UTF-8 #{node.postgresql.version} main'"
 end
 
 execute "createlang" do
