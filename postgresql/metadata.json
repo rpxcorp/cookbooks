@@ -18,7 +18,8 @@
     "postgresql::pgpool": "Install pgpool connection pooler.",
     "postgresql::orafce": "Install Orafce Oracle compat utils.",
     "postgresql::pgpool-II": "Install pgpool-II connection pooler.",
-    "postgresql::restart": "Runtime script restarts postgresql daemon(s)."
+    "postgresql::restart": "Runtime script restarts postgresql daemon(s).",
+    "postgresql::backport-9": "Installs backport for postgres 9.0."
   },
   "providing": {
   },
