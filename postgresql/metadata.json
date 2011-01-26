@@ -28,6 +28,20 @@
   "maintainer": "Your Name",
   "version": "0.0.0",
   "attributes": {
+    "postgresql/version": {
+      "required": "optional",
+      "calculated": false,
+      "choice": [
+
+      ],
+      "default": "8.4",
+      "type": "string",
+      "recipes": [
+        "postgresql::server"
+      ],
+      "display_name": "Postgres Version",
+      "description": "Determines which version of Postgres qill be installed."
+    }
   },
   "replacing": {
   },

@@ -4,7 +4,7 @@
 #
 
 #VERSION = node[:postgresql][:version]
-VERSION = '9.0'
+VERSION = '9.0' 
 
 include_recipe "postgresql::client"
 

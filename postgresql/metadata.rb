@@ -14,3 +14,10 @@ recipe            "postgresql::pgpool-II", "Install pgpool-II connection pooler.
 recipe            "postgresql::ripi-config", "Configure PG server for RIPI"
 recipe            "postgresql::slony", "Install Slony replication."
 recipe            "postgresql::orafce", "Install Orafce Oracle compat utils."
+
+attribute "postgresql/version",
+  :display_name => "Postgres Version",
+  :description => "Determines which version of Postgres qill be installed.",
+  :required => "optional",
+  :default => "8.4",
+  :recipes => [ "postgresql::server", ]
