@@ -6,7 +6,7 @@
 
 require_recipe "postgresql::server"
 
-package "ora2pg"
+#package "ora2pg"
 
 remote_file "/root/orafce.tar.gz" do
   source "http://pgfoundry.org/frs/download.php/2908/orafce-3.0.3.tar.gz"
