@@ -6,6 +6,7 @@
 
 require_recipe "postgresql::server"
 
+# requires libdbd-oracle-perl
 #package "ora2pg"
 
 remote_file "/tmp/orafce.tar.gz" do

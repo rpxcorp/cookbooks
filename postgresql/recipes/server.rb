@@ -3,9 +3,6 @@
 # Recipe:: server
 #
 
-VERSION = node[:postgresql][:version]
-#VERSION = '9.0' 
-
 include_recipe "postgresql::client"
 
 case node[:postgresql][:version]
@@ -18,8 +15,8 @@ else
 end
 
 pkg = [
-  "postgresql-#{VERSION}",
-  "postgresql-server-dev-#{VERSION}",
+  "postgresql-#{node.postgresql.version}",
+  "postgresql-server-dev-#{node.postgresql.version}",
 ]
 opt = [
   "ptop",
@@ -33,15 +30,14 @@ pkg.each do |i|
   end
 end
 
-
-template "/etc/postgresql/#{VERSION}/main/pg_hba.conf" do
+template "/etc/postgresql/#{node.postgresql.version}/main/pg_hba.conf" do
   source "pg_hba.default.conf.erb"
   owner "postgres"
   group "postgres"
   mode "0644"
 end
 
-template "/etc/postgresql/#{VERSION}/main/postgresql.conf" do
+template "/etc/postgresql/#{node.postgresql.version}/main/postgresql.conf" do
   source "postgresql.default.conf.erb"
   owner "postgres"
   group "postgres"
@@ -49,22 +45,24 @@ template "/etc/postgresql/#{VERSION}/main/postgresql.conf" do
 end
 
 service "postgresql" do
-  service_name VERSION == '9.0' ? 'postgresql' : "postgresql-#{VERSION}"
+  service_name "#{node.postgresql.version}" == '9.0' ? 'postgresql' : "postgresql-#{node.postgresql.version}"
   action :restart
 end
 
 execute "dropcuster" do
- user "postgres"
- command "su - postgres -c 'pg_dropcluster --stop #{VERSION} main'"
+  user "postgres"
+  command "su - postgres -c 'pg_dropcluster --stop #{node.postgresql.version} main'"
+  not_if "test -d /var/lib/postgresql/#{node.postgresql.version}/main/"
 end
 
 execute "dropcuster" do
- user "postgres"
- command "su - postgres -c 'pg_createcluster --start -e UTF-8 #{VERSION} main'"
+  user "postgres"
+  command "su - postgres -c 'pg_createcluster --start -e UTF-8 #{node.postgresql.version} main'"
+  not_if "test -d /var/lib/postgresql/#{node.postgresql.version}/main/"
 end
 
 execute "createlang" do
   user "postgres"
   command "su - postgres -c 'createlang plpgsql template1'"
-  ignore_failure true
+  #ignore_failure true
 end
