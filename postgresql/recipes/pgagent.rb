@@ -3,7 +3,9 @@
 # Add postgres pgagent
 #
 
-require_recipe "postgresql::server"
+require_recipe "postgresql::server" do
+  not_if "test -d /var/lib/postgresql/#{node.postgresql.version}/main/"
+end
 
 package "pgagent"
 
