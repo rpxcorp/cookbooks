@@ -17,14 +17,14 @@ bash "make_orafce" do
   cwd "/root"
   code <<-EOH
     tar xzf orafce.tar.gz
-    cd orafce*
+    cd orafce
     make USE_PGXS=1
     make USE_PGXS=1 install
   EOH
 end
 
 execute "install_orafce" do
-  cwd "/root/orafce*"
+  cwd "/root/orafce"
   user "postgres"
   command "su - postgres -c 'psql -U postgres -d template1 < orafunc.sql'"
 end
