@@ -64,5 +64,5 @@ end
 execute "createlang" do
   user "postgres"
   command "su - postgres -c 'createlang plpgsql template1'"
-  #ignore_failure true
+  ignore_failure true
 end
