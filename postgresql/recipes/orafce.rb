@@ -26,7 +26,7 @@ end
 execute "install_orafce" do
   cwd "/root/orafce*"
   user "postgres"
-  comand "su - postgres -c 'psql -U postgres -d template1 < orafunc.sql'"
+  command "su - postgres -c 'psql -U postgres -d template1 < orafunc.sql'"
 end
 
 execute "cleanup_orafce" do
