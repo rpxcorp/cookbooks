@@ -1,18 +1,20 @@
 
 #
 # Add postgres contrib package
+# See: http://www.postgresql.org/docs/current/static/contrib.html
 #
 
 require_recipe "postgresql::server"
 
 package "postgresql-contrib-#{node.postgresql.version}"
 
-# Install inividual packages here
 contrib_pkg = [
   'adminpack',
-  'cube',
-  'earthdistance',
-  'pgcrypto',
+  #'fuzzystrmatch',
+  #'dblink',
+  #'pgcrypto',
+  'hstore',
+  'intarray',
 ]
 
 contrib_pkg.each do |i|
