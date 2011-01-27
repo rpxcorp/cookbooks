@@ -5,17 +5,11 @@
 
 require_recipe "postgresql::server"
 
-service "postgresql" do
-  service_name "postgresql-#{node.postgresql.version}"
-  action :stop
-end
-
 template "#{node[:postgresql][:dir]}/pg_hba.conf" do
   source "pg_hba.conf.erb"
   owner "postgres"
   group "postgres"
   mode 0600
-  #notifies :reload, resources(:service => "postgresql")
 end
 
 template "#{node[:postgresql][:dir]}/postgresql.conf" do
@@ -23,10 +17,9 @@ template "#{node[:postgresql][:dir]}/postgresql.conf" do
   owner "postgres"
   group "postgres"
   mode 0600
-  #notifies :restart, resources(:service => "postgresql")
 end
 
 service "postgresql" do
-  service_name "postgresql-#{node.postgresql.version}"
-  action :start
+  service_name VERSION == '9.0' ? 'postgresql' : "postgresql-#{node.postgresql.version}"
+  action :restart
 end
