@@ -8,6 +8,6 @@ require_recipe "postgresql::server"
 package "pgagent"
 
 service "postgresql" do
-  service_name "postgresql-#{node.postgresql.version}"
+  service_name VERSION == '9.0' ? 'postgresql' : "postgresql-#{VERSION}"
   action :restart
 end

@@ -66,8 +66,3 @@ else
   default[:postgresql][:version] = "8.4"
   set[:postgresql][:dir]         = "/etc/postgresql/#{node[:postgresql][:version]}/main"
 end
-
-
-# Override
-#set[:postgresql][:version] = "9.0"
-#set[:postgresql][:dir]         = "/etc/postgresql/#{node[:postgresql][:version]}/main"

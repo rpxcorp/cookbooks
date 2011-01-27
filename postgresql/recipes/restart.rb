@@ -3,12 +3,7 @@
 # Stop, start postgres daemons
 #
 
-service "postgresql-#{node.postgresql.version}" do
-  provider Chef::Provider::Service::Init::Debian
-  action :stop
-end
-
-service "postgresql-#{node.postgresql.version}" do
-  provider Chef::Provider::Service::Init::Debian
-  action :start
+service "postgresql" do
+  service_name VERSION == '9.0' ? 'postgresql' : "postgresql-#{node.postgresql.version}"
+  action :restart
 end
