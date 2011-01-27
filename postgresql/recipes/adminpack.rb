@@ -7,9 +7,19 @@ require_recipe "postgresql::server"
 
 package "postgresql-contrib-#{node.postgresql.version}"
 
-execute "psql" do
-  user "postgres"
-  command "su - postgres -c 'psql < /usr/share/postgresql/#{node.postgresql.version}/contrib/adminpack.sql'"
+# Install inividual packages here
+contrib_pkg = [
+  'adminpack',
+  'cube',
+  'earthdistance',
+  'pgcrypto',
+]
+
+contrib_pkg.each do |i|
+  execute "install #{i}" do
+    user "postgres"
+    command "su - postgres -c 'psql -d template1 < /usr/share/postgresql/#{node.postgresql.version}/contrib/#{i}.sql'"
+  end
 end
 
 service "postgresql" do
