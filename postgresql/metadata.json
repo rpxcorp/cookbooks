@@ -8,16 +8,17 @@
   },
   "description": "Installs and configures postgresql for clients or servers",
   "recipes": {
-    "postgresql::adminpack": "Installs server side adminpack for pgadmin tool.",
     "postgresql::server": "Installs postgresql server packages, templates",
     "postgresql::ripi-config": "Configure PG server for RIPI",
     "postgresql::client": "Installs postgresql client package(s)",
     "postgresql::slony": "Install Slony replication.",
     "postgresql::default": "Installs postgresql client package",
     "postgresql::pgagent": "Install pgagent job control system for postgres.",
-    "postgresql::pgpool": "Install pgpool connection pooler.",
-    "postgresql::orafce": "Install Orafce Oracle compat utils.",
-    "postgresql::pgpool-II": "Install pgpool-II connection pooler.",
+    "postgresql::pgpool": "Install pgpool connection pooler via apt.",
+    "postgresql::statspack": "Install PG statspack.",
+    "postgresql::pgpool-II": "Install pgpool-II connection pooler from source.",
+    "postgresql::oracle-compat": "Install Orafce Oracle compat utils.",
+    "postgresql::contrib": "Installs server side community contributions.",
     "postgresql::restart": "Runtime script restarts postgresql daemon(s).",
     "postgresql::backport-9": "Installs backport for postgres 9.0."
   },
@@ -40,7 +41,7 @@
         "postgresql::server"
       ],
       "display_name": "Postgres Version",
-      "description": "Determines which version of Postgres qill be installed."
+      "description": "Determines which version of Postgres will be installed."
     }
   },
   "replacing": {
