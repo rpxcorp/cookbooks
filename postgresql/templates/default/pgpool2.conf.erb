@@ -8,14 +8,12 @@ listen_addresses = 'localhost'
 port = 5432
 
 # configure the backends
-backend_hostname0 = '10.249.166.224'
+backend_hostname0 = 'db01'
 backend_port0 = 5432
 backend_weight0 = 1
-backend_data_directory0 = '/data'
-backend_hostname1 = '10.211.22.230'
+backend_hostname1 = 'db02'
 backend_port1 = 5432
 backend_weight1 = 1
-backend_data_directory1 = '/data1'
 
 # connection pooling
 num_init_children = 4
@@ -23,6 +21,6 @@ max_pool = 4
 connection_life_time = 0
 child_max_connections = 0
 
-# uncomment this and pgpool fails to connect
+# configure master slave mode
 master_slave_mode = true
 master_slave_sub_mode = 'stream'
