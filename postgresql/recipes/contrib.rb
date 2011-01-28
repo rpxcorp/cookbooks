@@ -14,7 +14,7 @@ contrib_pkg = [
   #'dblink',
   #'pgcrypto',
   'hstore',
-  'intarray',
+  #'intarray', # missing?
 ]
 
 contrib_pkg.each do |i|
