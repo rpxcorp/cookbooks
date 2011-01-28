@@ -14,7 +14,4 @@ end
 
 package "freenx"
 
-# Install one of these
-#package "xubuntu-desktop"
 package "ubuntu-desktop"
-
