@@ -1,0 +1,30 @@
+{
+  "suggestions": {
+  },
+  "platforms": {
+  },
+  "long_description": "",
+  "conflicting": {
+  },
+  "description": "A fabulous new cookbook",
+  "recipes": {
+    "freenx::default": "Setup FreeNX remote desktop."
+  },
+  "providing": {
+  },
+  "dependencies": {
+  },
+  "maintainer": "Your Name",
+  "version": "0.0.0",
+  "attributes": {
+  },
+  "replacing": {
+  },
+  "maintainer_email": "youremail@example.com",
+  "groupings": {
+  },
+  "name": "freenx",
+  "recommendations": {
+  },
+  "license": "Apache v2.0"
+}
