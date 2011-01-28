@@ -1,0 +1,10 @@
+
+#
+# Puts server in slave mode
+#
+
+standby_mode = 'on'
+primary_conninfo = 'host=db01 port=5432 user=repl password=ifym'
+restore_command = 'cp /mnt/postgresql/archivedir/%f %p'
+trigger_file = '/mnt/postgresql/trigger_file'
+archive_cleanup_command = 'pg_archivecleanup /mnt/postgresql/archivedir %r'
