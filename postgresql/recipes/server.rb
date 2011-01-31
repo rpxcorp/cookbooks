@@ -30,6 +30,11 @@ pkg.each do |i|
   end
 end
 
+directory "/var/lib/postgresql/#{node.postgresql.version}/main/wal_archive" do
+  recursive true
+  action :create
+end
+
 template "/etc/postgresql/#{node.postgresql.version}/main/pg_hba.conf" do
   source "pg_hba.default.conf.erb"
   owner "postgres"
