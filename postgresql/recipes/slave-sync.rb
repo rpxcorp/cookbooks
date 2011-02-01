@@ -5,7 +5,7 @@
 
 script "sync_master_to_slave" do
   interpreter "bash"
-  user "root"
+  user "postgres"
   code <<-EOH
     ssh db02 '/etc/init.d/postgresql stop'
     psql -c "SELECT pg_start_backup('IFYM');"
