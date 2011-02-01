@@ -31,7 +31,9 @@ pkg.each do |i|
 end
 
 directory "/var/lib/postgresql/#{node.postgresql.version}/main/wal_archive" do
-  recursive true
+  owner "postgres"
+  group "postgres"
+  mode "0700"
   action :create
 end
 
