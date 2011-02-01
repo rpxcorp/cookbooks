@@ -13,7 +13,7 @@ recipe            "postgresql::pgpool", "Install pgpool connection pooler via ap
 recipe            "postgresql::pgpool-II", "Install pgpool-II connection pooler from source."
 recipe            "postgresql::ripi-config", "Configure PG server for RIPI"
 recipe            "postgresql::slave", "Prep host as streaming replication slave."
-recipe            "postgresql::slave::sync", "Push database from master to slave.  Run on master."
+recipe            "postgresql::slave-sync", "Push database from master to slave.  Run on master."
 recipe            "postgresql::slony", "Install Slony replication."
 recipe            "postgresql::statspack", "Install PG statspack."
 recipe            "postgresql::oracle-compat", "Install Orafce Oracle compat utils."

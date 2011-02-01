@@ -17,9 +17,9 @@
     "postgresql::pgagent": "Install pgagent job control system for postgres.",
     "postgresql::pgpool": "Install pgpool connection pooler via apt.",
     "postgresql::statspack": "Install PG statspack.",
-    "postgresql::slave::sync": "Push database from master to slave.  Run on master.",
     "postgresql::pgpool-II": "Install pgpool-II connection pooler from source.",
     "postgresql::oracle-compat": "Install Orafce Oracle compat utils.",
+    "postgresql::slave-sync": "Push database from master to slave.  Run on master.",
     "postgresql::contrib": "Installs server side community contributions.",
     "postgresql::restart": "Runtime script restarts postgresql daemon(s).",
     "postgresql::backport-9": "Installs backport for postgres 9.0."
