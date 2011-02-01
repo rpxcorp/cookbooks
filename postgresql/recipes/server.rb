@@ -59,13 +59,13 @@ end
 execute "dropcuster" do
   user "postgres"
   command "su - postgres -c 'pg_dropcluster --stop #{node.postgresql.version} main'"
-  not_if "test -d /var/lib/postgresql/#{node.postgresql.version}/main/"
+  #not_if "test -d /var/lib/postgresql/#{node.postgresql.version}/main/"
 end
 
-execute "dropcuster" do
+execute "createcuster" do
   user "postgres"
   command "su - postgres -c 'pg_createcluster --start -e UTF-8 #{node.postgresql.version} main'"
-  not_if "test -d /var/lib/postgresql/#{node.postgresql.version}/main/"
+  #not_if "test -d /var/lib/postgresql/#{node.postgresql.version}/main/"
 end
 
 execute "createlang" do

@@ -180,7 +180,7 @@ checkpoint_completion_target = 0.9	# checkpoint target duration, 0.0 - 1.0
 
 archive_mode = on		# allows archiving to be done
 				# (change requires restart)
-archive_command = 'rsync -q %p db02:/var/lib/<%= node.postgresql.version -%>/main/wal_archive/%f' # command to use to archive a logfile segment
+archive_command = 'rsync -q %p db02:/var/lib/postgresql/<%= node.postgresql.version -%>/main/wal_archive/%f' # command to use to archive a logfile segment
 #archive_timeout = 0		# force a logfile segment switch after this
 				# number of seconds; 0 disables
 

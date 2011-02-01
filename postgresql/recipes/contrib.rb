@@ -21,6 +21,7 @@ contrib_pkg.each do |i|
   execute "install #{i}" do
     user "postgres"
     command "su - postgres -c 'psql -d template1 < /usr/share/postgresql/#{node.postgresql.version}/contrib/#{i}.sql'"
+    ignore_failure true
   end
 end
 
