@@ -13,6 +13,7 @@
     "postgresql::client": "Installs postgresql client package(s)",
     "postgresql::slony": "Install Slony replication.",
     "postgresql::default": "Installs postgresql client package",
+    "postgresql::slave": "Prep host as streaming replication slave.",
     "postgresql::pgagent": "Install pgagent job control system for postgres.",
     "postgresql::pgpool": "Install pgpool connection pooler via apt.",
     "postgresql::statspack": "Install PG statspack.",

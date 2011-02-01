@@ -12,6 +12,7 @@ recipe            "postgresql::pgagent", "Install pgagent job control system for
 recipe            "postgresql::pgpool", "Install pgpool connection pooler via apt."
 recipe            "postgresql::pgpool-II", "Install pgpool-II connection pooler from source."
 recipe            "postgresql::ripi-config", "Configure PG server for RIPI"
+recipe            "postgresql::slave", "Prep host as streaming replication slave."
 recipe            "postgresql::slony", "Install Slony replication."
 recipe            "postgresql::statspack", "Install PG statspack."
 recipe            "postgresql::oracle-compat", "Install Orafce Oracle compat utils."
