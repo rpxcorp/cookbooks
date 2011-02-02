@@ -12,10 +12,9 @@ template "/etc/environment" do
 end
 
 # create rpx user
-user "rpx" do
-  shell "/bin/bash"
-  home "/home/rpx"
-  action :create
+execute "useradd rpx" do
+  command "useradd -m -s /bin/bash rpx"
+  not_if "grep rpx /etc/passwd"
 end
 
 # set passenger user from "www-data" to "rpx" (in 2 places)
