@@ -77,4 +77,5 @@ end
 execute "create repl user" do
   user "postgres"
   command "psql -U postgres -c 'CREATE USER repl WITH SUPERUSER PASSWORD 'ifym'"
+  ignore_failure true
 end

@@ -4,7 +4,7 @@
 # See: http://www.postgresql.org/docs/current/static/contrib.html
 #
 
-require_recipe "postgresql::server"
+#require_recipe "postgresql::server"
 
 package "postgresql-contrib-#{node.postgresql.version}"
 

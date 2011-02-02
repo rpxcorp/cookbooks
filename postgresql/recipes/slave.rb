@@ -3,7 +3,7 @@
 # Configure server as slave
 #
 
-require_recipe "postgresql::server"
+#require_recipe "postgresql::server"
 
 template "/var/lib/postgresql/#{node.postgresql.version}/main/recovery.conf" do
   source "recovery.conf.erb"

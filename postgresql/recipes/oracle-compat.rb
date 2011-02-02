@@ -4,7 +4,7 @@
 # See: http://pgfoundry.org/projects/orafce/
 #
 
-require_recipe "postgresql::server"
+#require_recipe "postgresql::server"
 
 # requires libdbd-oracle-perl
 #package "ora2pg"

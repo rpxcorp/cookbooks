@@ -3,7 +3,7 @@
 # Add postgres pgagent
 #
 
-require_recipe "postgresql::server"
+#require_recipe "postgresql::server"
 
 package "pgagent"
 

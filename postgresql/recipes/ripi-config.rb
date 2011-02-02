@@ -3,7 +3,7 @@
 # Puts config files in place for RIPI after server install
 #
 
-require_recipe "postgresql::server"
+#require_recipe "postgresql::server"
 
 template "#{node[:postgresql][:dir]}/pg_hba.conf" do
   source "pg_hba.conf.erb"

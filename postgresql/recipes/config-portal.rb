@@ -3,7 +3,7 @@
 # Puts config files in place for Portal after server install
 #
 
-require_recipe "postgresql::server"
+#require_recipe "postgresql::server"
 
 service "postgresql" do
   service_name "postgresql-#{node.postgresql.version}"
