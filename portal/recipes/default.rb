@@ -13,6 +13,8 @@ end
 
 # create rpx user
 user "rpx" do
+  shell "/bin/bash"
+  home "/home/rpx"
   action :create
 end
 
