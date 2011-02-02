@@ -5,6 +5,6 @@
 
 standby_mode = 'on'
 primary_conninfo = 'host=db01 port=5432 user=repl password=ifym'
-restore_command = 'cp /var/lib/postgresql/#{node.postgresql.version}/main/wal_archive/%f %p'
+restore_command = 'cp /var/lib/postgresql/<%= node.postgresql.version -%>/main/wal_archive/%f %p'
 trigger_file = '/var/lib/postgresql/#{node.postgresql.version}/main/trigger_file'
-archive_cleanup_command = 'pg_archivecleanup /var/lib/postgresql/#{node.postgresql.version}/main/wal_archive %r'
+archive_cleanup_command = 'pg_archivecleanup /var/lib/postgresql/<%= node.postgresql.version -%>/main/wal_archive %r'

@@ -73,3 +73,8 @@ execute "createlang" do
   command "su - postgres -c 'createlang plpgsql template1'"
   ignore_failure true
 end
+
+execute "create repl user" do
+  user "postgres"
+  command "psql -U postgres -c 'CREATE USER repl WITH SUPERUSER PASSWORD 'ifym'"
+end
