@@ -14,6 +14,7 @@ end
 
 execute "link pg_archive" do
   command "ln -s /usr/lib/postgresql/9.0/bin/pg_archivecleanup /usr/bin/"
+  not_if "test -e /usr/bin/pg_archivecleanup"
 end
 
 service "postgresql" do

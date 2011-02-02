@@ -20,8 +20,8 @@ end
 
 # set rails environment to "demo"
 execute "set_rails_env" do
+  user "rpx"
   command "echo 'export rails_env=DEMO' >> ~/.bashrc"
-  user rpx
 end
 
 # chown /opt/rpx to user "rpx"
