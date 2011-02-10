@@ -1,7 +1,25 @@
 {
   "suggestions": {
   },
+  "license": "Apache 2.0",
   "long_description": "= DESCRIPTION:\n\n= REQUIREMENTS:\n\n= ATTRIBUTES:\n\n= USAGE:\n\n",
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "description": "Installs RightScale EBS Tools plus a range of EBS related recipes.",
+  "version": "0.0.1",
+  "recipes": {
+    "rs_ebs::default": "Installs RightScale EBS Tools.",
+    "rs_ebs::symlinks": "Creates symlinks after mounting the EBS volume.",
+    "rs_ebs::volume_restore": "Restores a new EBS volume from the latest EBS snapshot of backup_prefix or restore_prefix_override.",
+    "rs_ebs::volume_delete": "Unmounts, detaches and deletes and EBS volume.",
+    "rs_ebs::volume_continuous_backups": "Updates cron for regular EBS snapshots.",
+    "rs_ebs::volume_backup": "Takes a regular EBS snapshot of an attached EBS volume.",
+    "rs_ebs::mount_volumes": "Mounts EBS volume(s) attached to the instance and/or according to the node's config metadata.",
+    "rs_ebs::tools_install": "Installs RightScale EBS Tools."
+  },
+  "maintainer": "Chris Fordham",
   "attributes": {
     "ebs/backup_keep_weekly": {
       "required": "optional",
@@ -15,8 +33,8 @@
         "rs_ebs::volume_backup",
         "rs_ebs::volume_continuous_backups"
       ],
-      "description": "The number of weekly snapshots to keep (i.e. rotation size). Default: 6.  See \"Archiving Snapshots\" on RightScale Support for further details on the archiving logic.",
-      "display_name": "EBS backup keep weekly"
+      "display_name": "EBS backup keep weekly",
+      "description": "The number of weekly snapshots to keep (i.e. rotation size). Default: 6.  See \"Archiving Snapshots\" on RightScale Support for further details on the archiving logic."
     },
     "ebs/symlinks_force": {
       "required": "optional",
@@ -29,8 +47,8 @@
       "recipes": [
         "rs_ebs::symlinks"
       ],
-      "description": "Force creation of a symlink if the destination file/directory already exists (force removes the destination).",
-      "display_name": "EBS symlinks force"
+      "display_name": "EBS symlinks force",
+      "description": "Force creation of a symlink if the destination file/directory already exists (force removes the destination)."
     },
     "ebs/backup_keep_yearly": {
       "required": "optional",
@@ -44,8 +62,8 @@
         "rs_ebs::volume_backup",
         "rs_ebs::volume_continuous_backups"
       ],
-      "description": "The number of yearly snapshots to keep (i.e. rotation size). Default: 2.  See \"Archiving Snapshots\" on RightScale Support for further details on the archiving logic.",
-      "display_name": "EBS backup keep yearly"
+      "display_name": "EBS backup keep yearly",
+      "description": "The number of yearly snapshots to keep (i.e. rotation size). Default: 2.  See \"Archiving Snapshots\" on RightScale Support for further details on the archiving logic."
     },
     "ebs/backup_prefix": {
       "required": "optional",
@@ -60,8 +78,8 @@
         "rs_ebs::volume_backup",
         "rs_ebs::volume_continuous_backups"
       ],
-      "description": "The EBS volume backup prefix",
-      "display_name": "EBS volume backup prefix"
+      "display_name": "EBS volume backup prefix",
+      "description": "The EBS volume backup prefix"
     },
     "ebs/symlinks": {
       "required": "optional",
@@ -76,8 +94,8 @@
       "recipes": [
         "rs_ebs::symlinks"
       ],
-      "description": "An array of symlinks to create after mounting the volume. Example: \"home:/home\", \"tmp:/mnt/tmp\"",
-      "display_name": "EBS symlinks"
+      "display_name": "EBS symlinks",
+      "description": "An array of symlinks to create after mounting the volume. Example: \"home:/home\", \"tmp:/mnt/tmp\"."
     },
     "ebs/node_scm_namespace": {
       "required": "optional",
@@ -90,8 +108,8 @@
       "recipes": [
         "rs_ebs::mount_volumes"
       ],
-      "description": "The node SCM identifier of the instance.",
-      "display_name": "node scm identifer"
+      "display_name": "node scm namespace",
+      "description": "The node SCM namespace of the instance, e.g. com.google."
     },
     "ebs/backup_frequency": {
       "required": "optional",
@@ -104,8 +122,8 @@
       "recipes": [
         "rs_ebs::volume_continuous_backups"
       ],
-      "description": "Defines how frequently EBS snapshot backups should be taken.  By default, backup snapshots are taken every hour.  Define the frequency in standard crontab format (example: 1 * * * * ).  If set to \"ignore\" hourly backups will begin at a random time.",
-      "display_name": "EBS volume cron backup frequency"
+      "display_name": "EBS volume cron backup frequency",
+      "description": "Defines how frequently EBS snapshot backups should be taken.  By default, backup snapshots are taken every hour.  Define the frequency in standard crontab format (example: 1 * * * * ).  If set to \"ignore\" hourly backups will begin at a random time."
     },
     "ebs/backup_keep_monthly": {
       "required": "optional",
@@ -119,8 +137,8 @@
         "rs_ebs::volume_backup",
         "rs_ebs::volume_continuous_backups"
       ],
-      "description": "The number of monthly snapshots to keep (i.e. rotation size).  Default: 12.  See \"Archiving Snapshots\" on RightScale Support for further details on the archiving logic.",
-      "display_name": "EBS backup keep monthly"
+      "display_name": "EBS backup keep monthly",
+      "description": "The number of monthly snapshots to keep (i.e. rotation size).  Default: 12.  See \"Archiving Snapshots\" on RightScale Support for further details on the archiving logic."
     },
     "ebs/backup_keep_daily": {
       "required": "optional",
@@ -134,8 +152,8 @@
         "rs_ebs::volume_backup",
         "rs_ebs::volume_continuous_backups"
       ],
-      "description": "The number of daily snapshots to keep (i.e. rotation size). Default: 14.  See \"Archiving Snapshots\" on RightScale Support for further details on the archiving logic.",
-      "display_name": "EBS backup keep daily"
+      "display_name": "EBS backup keep daily",
+      "description": "The number of daily snapshots to keep (i.e. rotation size). Default: 14.  See \"Archiving Snapshots\" on RightScale Support for further details on the archiving logic."
     },
     "ebs/node_scm_ident": {
       "required": "optional",
@@ -148,8 +166,8 @@
       "recipes": [
         "rs_ebs::mount_volumes"
       ],
-      "description": "The node SCM identifier of the instance.",
-      "display_name": "node scm identifer"
+      "display_name": "node scm identifer",
+      "description": "The node SCM identifier of the instance, e.g. kryten."
     },
     "ebs/restore_prefix_override": {
       "required": "optional",
@@ -162,8 +180,8 @@
       "recipes": [
         "rs_ebs::volume_restore"
       ],
-      "description": "Override the EBS volume restore backup prefix",
-      "display_name": "EBS volume restore prefix override"
+      "display_name": "EBS volume restore prefix override",
+      "description": "Override the EBS volume restore backup prefix"
     },
     "ebs/restore_fs_type": {
       "required": "optional",
@@ -176,8 +194,8 @@
       "recipes": [
         "rs_ebs::volume_restore"
       ],
-      "description": "The EBS volume filestytem type",
-      "display_name": "EBS volume restore filesystem type"
+      "display_name": "EBS volume restore filesystem type",
+      "description": "The EBS volume filestytem type."
     },
     "ebs/backup_keep_last": {
       "required": "optional",
@@ -191,8 +209,8 @@
         "rs_ebs::volume_backup",
         "rs_ebs::volume_continuous_backups"
       ],
-      "description": "The total number of snapshots to keep.  The oldest snapshot will be deleted when this value is exceeded.  Default: 60.  See \"Archiving Snapshots\" on RightScale Support for further details on the archiving logic.",
-      "display_name": "EBS backup keep last"
+      "display_name": "EBS backup keep last",
+      "description": "The total number of snapshots to keep.  The oldest snapshot will be deleted when this value is exceeded.  Default: 60.  See \"Archiving Snapshots\" on RightScale Support for further details on the archiving logic."
     },
     "ebs/mount_point": {
       "required": "optional",
@@ -209,25 +227,13 @@
         "rs_ebs::volume_delete",
         "rs_ebs::symlinks"
       ],
-      "description": "The EBS volume restore mount point",
-      "display_name": "EBS volume restore mount point"
+      "display_name": "EBS volume restore mount point",
+      "description": "The EBS volume restore mount point."
     }
   },
-  "conflicting": {
+  "replacing": {
   },
   "dependencies": {
-  },
-  "recipes": {
-    "rs_ebs::default": "Installs RightScale EBS Tools.",
-    "rs_ebs::symlinks": "Creates symlinks after mounting the EBS volume.",
-    "rs_ebs::volume_restore": "Restores a new EBS volume from the latest EBS snapshot of backup_prefix or restore_prefix_override.",
-    "rs_ebs::volume_delete": "Unmounts, detaches and deletes and EBS volume.",
-    "rs_ebs::volume_continuous_backups": "Updates cron for regular EBS snapshots.",
-    "rs_ebs::volume_backup": "Takes a regular EBS snapshot of an attached EBS volume.",
-    "rs_ebs::mount_volumes": "Mounts EBS volume(s) attached to the instance according to the node config metadata.",
-    "rs_ebs::tools_install": "Installs RightScale EBS Tools."
-  },
-  "providing": {
   },
   "platforms": {
     "debian": [
@@ -243,16 +249,10 @@
 
     ]
   },
-  "license": "Apache 2.0",
-  "maintainer": "Chris Fordham",
-  "version": "0.0.1",
-  "replacing": {
-  },
   "maintainer_email": "chris@xhost.com.au",
+  "name": "rs_ebs",
   "groupings": {
   },
-  "name": "rs_ebs",
   "recommendations": {
-  },
-  "description": "Installs RightScale EBS Tools plus a range of EBS related recipes."
+  }
 }
