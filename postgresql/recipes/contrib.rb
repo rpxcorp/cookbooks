@@ -10,11 +10,8 @@ package "postgresql-contrib-#{node.postgresql.version}"
 
 contrib_pkg = [
   'adminpack',
-  #'fuzzystrmatch',
-  #'dblink',
-  #'pgcrypto',
+  'pgcrypto',
   'hstore',
-  #'intarray', # missing?
 ]
 
 contrib_pkg.each do |i|
