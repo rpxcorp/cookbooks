@@ -1,9 +1,12 @@
+
 #
 # Cookbook Name:: postgresql
 # Recipe:: server
 #
 
 include_recipe "postgresql::client"
+
+package "xfsprogs"
 
 case node[:postgresql][:version]
 when "8.3"
