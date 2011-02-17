@@ -3,6 +3,9 @@
 # setup portal app server
 #
 
+# for some gem
+package "libcurl3-dev"
+
 # - added /opt/ruby-enterprise/bin to /etc/environment
 template "/etc/environment" do
   source "etc_environment.erb"
